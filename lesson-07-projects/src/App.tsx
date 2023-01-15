@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import NotFound from './pages/NotFound';
+import NotFound from './shared/NotFound';
 
 // export for unit testing in the future
 // doc: https://www.youtube.com/watch?v=cchqeWY0Nak&t=1581s
