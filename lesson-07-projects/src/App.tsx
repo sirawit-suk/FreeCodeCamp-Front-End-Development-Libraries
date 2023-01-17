@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { NavBar, Main, Footer } from './shared';
+import { NavBar, MainContainer, Footer } from './shared';
 import { NAVIGATION_EXTENDS } from './constants/navigations-constant';
 import { HomePage, NotFoundPage, RandomQuoteMachinePage } from './pages';
 
@@ -37,10 +37,10 @@ export function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Main>
+      <MainContainer>
         <Body />
-      </Main>
-      <Footer />
+      </MainContainer>
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

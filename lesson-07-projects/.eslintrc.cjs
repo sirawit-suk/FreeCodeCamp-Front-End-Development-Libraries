@@ -24,5 +24,6 @@ module.exports = {
     // 'react/jsx-no-useless-fragment': 'off',
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
+    'react/require-default-props': 'off',
   },
 };

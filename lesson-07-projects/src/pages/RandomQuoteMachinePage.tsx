@@ -1,29 +1,86 @@
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Card, Anchor, Button } from '../components';
+
+interface Quote {
+  text: string;
+  author: string;
+}
+
 /** FreeCodeCamp: Frontend Project 1 */
 export function RandomQuoteMachinePage() {
-  const quotes = ['123', '456'];
-  const quote = quotes[0];
+  const [quotes, setQuotes] = useState<Quote[]>([]);
+  const [selectedQuote, setSelectedQuote] = useState<Quote>({
+    text: 'Loading...',
+    author: '',
+  });
 
-  const onClickTweet = () => {
-    // window.location.href = "https://twitter.com/intent/tweet?text=" + quote;
+  const quoteApi = 'https://type.fit/api/quotes';
+
+  useEffect(() => {
+    const fetchQuotes = async () => {
+      try {
+        const response = await fetch(quoteApi);
+        const data = await response.json();
+        setQuotes(data);
+        setSelectedQuote(data[Math.floor(Math.random() * data.length)]);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchQuotes();
+  }, []);
+
+  const randomQuote = (): Quote => {
+    return quotes[Math.floor(Math.random() * quotes.length)];
   };
 
+  const onClickRandom = () => {
+    setSelectedQuote(randomQuote());
+  };
+
+  const twitterLink = `https://twitter.com/intent/tweet?text=${`${selectedQuote.text} - ${selectedQuote.author}`}`;
+  const githubLink = 'https://github.com/sirawit-suk';
+
   return (
-    <div>
-      <div id="quote-box" className="container mx-auto">
-        <div id="text">xxx</div> <p id="author">Author</p>
-        <button id="new-quote" type="button">
-          new Quote
-        </button>
-        <a
-          id="tweet-quote"
-          href={`https://twitter.com/intent/tweet?text=${quote}`}
-          target="_blank"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          rel="noreferrer"
-        >
-          tweet quote
-        </a>
-      </div>
+    <div
+      id="quote-box"
+      className="flex flex-col justify-center items-center w-full h-full "
+    >
+      <Card className="p-12">
+        <span>
+          <FontAwesomeIcon className="scale-150 mx-4 pb-1" icon={faQuoteLeft} />
+          <span className="text-2xl" id="text">
+            {selectedQuote.text}
+          </span>
+          <FontAwesomeIcon
+            className="scale-150  mx-4 pb-1"
+            icon={faQuoteRight}
+          />
+        </span>
+        <p className="text-muted self-end mt-2" id="author">
+          {selectedQuote.author ? `- ${selectedQuote.author}` : '- Anonymous'}
+        </p>
+        <div className="flex justify-between w-full mt-8">
+          <div className="flex gap-2">
+            <Anchor id="github" href={githubLink}>
+              <Button>
+                <FontAwesomeIcon icon={faGithub} />
+              </Button>
+            </Anchor>
+            <Anchor id="tweet-quote" href={twitterLink}>
+              <Button>
+                <FontAwesomeIcon icon={faTwitter} />
+              </Button>
+            </Anchor>
+          </div>
+
+          <Button id="new-quote" name="new quote" onClick={onClickRandom} />
+        </div>
+      </Card>
     </div>
   );
 }
