@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MarkdownPreviewer, Editor, WindowFrame } from '../components';
 import { MarkdownStatus } from '../constants';
 
+/** FreeCodeCamp: Frontend Project 2 */
 export function MarkdownPreviewerPage() {
   const [status, setStatus] = useState<MarkdownStatus>(MarkdownStatus.default);
   const [textEditor, setTextEditor] = useState<string>(`# Header 1

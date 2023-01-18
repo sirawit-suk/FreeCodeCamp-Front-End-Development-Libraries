@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NavBar, MainContainer, Footer } from './shared';
 import { NAVIGATION_EXTENDS } from './constants/navigations-constant';
 import {
+  DrumMachinePage,
   HomePage,
   MarkdownPreviewerPage,
   NotFoundPage,
@@ -27,6 +28,11 @@ export function Body() {
         key={markdownPreviewer.name}
         path={markdownPreviewer.path}
         element={<MarkdownPreviewerPage />}
+      />
+      <Route
+        key={drumMachine.name}
+        path={drumMachine.path}
+        element={<DrumMachinePage />}
       />
 
       <Route
