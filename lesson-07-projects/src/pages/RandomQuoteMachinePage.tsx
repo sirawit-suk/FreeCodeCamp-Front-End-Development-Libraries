@@ -48,7 +48,7 @@ export function RandomQuoteMachinePage() {
   return (
     <div
       id="quote-box"
-      className="flex flex-col justify-center items-center w-full h-full "
+      className="flex flex-col justify-center items-center w-full min-h-screen "
     >
       <Card className="p-12">
         <span>

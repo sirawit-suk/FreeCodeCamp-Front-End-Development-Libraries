@@ -8,7 +8,7 @@ export function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full">
+    <div className="flex flex-col justify-center items-center w-full h-screen">
       <h1 className="text-gray-800 text-3xl my-8">Home page</h1>
       <Card>
         <div className="font-bold text-xl mb-4">Menu</div>

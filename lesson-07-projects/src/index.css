@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.disable-tailwind > * {
+  all: revert;
+}
+
 .text-primary {
   @apply text-gray-900;
 }

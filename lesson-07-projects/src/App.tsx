@@ -1,7 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NavBar, MainContainer, Footer } from './shared';
 import { NAVIGATION_EXTENDS } from './constants/navigations-constant';
-import { HomePage, NotFoundPage, RandomQuoteMachinePage } from './pages';
+import {
+  HomePage,
+  MarkdownPreviewerPage,
+  NotFoundPage,
+  RandomQuoteMachinePage,
+} from './pages';
 
 // export for unit testing in the future
 // doc: https://www.youtube.com/watch?v=cchqeWY0Nak&t=1581s
@@ -18,11 +23,11 @@ export function Body() {
         path={randomQuoteMachine.path}
         element={<RandomQuoteMachinePage />}
       />
-      {/* <Route
+      <Route
         key={markdownPreviewer.name}
         path={markdownPreviewer.path}
         element={<MarkdownPreviewerPage />}
-      /> */}
+      />
 
       <Route
         key={notFound.name}

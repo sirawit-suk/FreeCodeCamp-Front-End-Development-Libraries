@@ -18,7 +18,7 @@ export function NavBar() {
   const { pathname: currentPath } = useLocation();
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed w-screen">
+    <Disclosure as="nav" className="bg-gray-800 fixed w-screen top-0">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
