@@ -27,6 +27,7 @@ export function RandomQuoteMachinePage() {
         setQuotes(data);
         setSelectedQuote(data[Math.floor(Math.random() * data.length)]);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error(err);
       }
     };

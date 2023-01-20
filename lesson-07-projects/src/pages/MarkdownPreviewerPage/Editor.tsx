@@ -1,4 +1,3 @@
-import Markdown from 'marked-react';
 import { MarkdownStatus } from '../../constants';
 
 type Props = {

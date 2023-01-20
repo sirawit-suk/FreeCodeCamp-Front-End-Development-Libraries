@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CalculatorKeyButton, Card } from '../../components';
+import { CalculatorKeyButton } from '../../components';
 import { CalculatorDisplay } from '../../interfaces';
 import { CALCULATOR_KEYS } from '../../constants';
 

@@ -1,9 +1,8 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { NAVIGATIONS } from '../../constants/navigations-constant';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 
-// eslint-disable-next-line import/prefer-default-export
 export function HomePage() {
   const navigate = useNavigate();
 
