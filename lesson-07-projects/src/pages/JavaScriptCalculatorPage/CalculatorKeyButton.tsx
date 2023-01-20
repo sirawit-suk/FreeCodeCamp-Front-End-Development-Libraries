@@ -49,7 +49,7 @@ export function CalculatorKeyButton({
         return defaultCase;
       }
 
-      // calculate result
+      // Calculate result
       if (id === CALCULATOR_KEYS.equals.id) {
         let newHistory = history;
         for (let i = 0; i < 2; i += 1) {
@@ -70,11 +70,13 @@ export function CalculatorKeyButton({
         };
       }
 
+      // Number Decimal and Operator
       if (
         regExNumber.test(value) ||
         regExDecimal.test(value) ||
         regExOperator.test(value)
       ) {
+        // After click equal
         if (regExEqual.test(history)) {
           if (regExNumber.test(value)) {
             return {
@@ -90,13 +92,16 @@ export function CalculatorKeyButton({
           }
         }
 
+        // Duplicate operator
         if (regExOperator.test(value) && regExOperator.test(result)) {
+          // Exceed 2 consecutive negative (No action)
           if (
             id === CALCULATOR_KEYS.subtract.id &&
             regExOperatorConsecutive.test(history.slice(-2))
           ) {
             return defaultCase;
           }
+          // Except for negative to have 2 consecutive negative
           if (
             id === CALCULATOR_KEYS.subtract.id &&
             regExOperator.test(history.slice(-1))
@@ -106,12 +111,14 @@ export function CalculatorKeyButton({
               result: value,
             };
           }
+          // Already have 2 operator, renew operator
           if (regExOperatorConsecutive.test(history.slice(-2))) {
             return {
               history: history.slice(0, -2) + value,
               result: value,
             };
           }
+          // Already have 1 operator, renew operator
           return {
             history: history.slice(0, -1) + value,
             result: value,
