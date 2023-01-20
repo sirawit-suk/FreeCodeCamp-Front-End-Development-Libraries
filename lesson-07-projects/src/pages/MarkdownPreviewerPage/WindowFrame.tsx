@@ -5,8 +5,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { Button } from './Button';
-import { MarkdownStatus } from '../constants';
+import { Button } from '../../components/Button';
+import { MarkdownStatus } from '../../constants';
 
 type Props = {
   name: string;

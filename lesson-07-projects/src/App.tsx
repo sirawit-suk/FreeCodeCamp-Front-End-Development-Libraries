@@ -8,13 +8,20 @@ import {
   NotFoundPage,
   RandomQuoteMachinePage,
 } from './pages';
+import { JavaScriptCalculatorPage } from './pages/JavaScriptCalculatorPage/JavaScriptCalculatorPage';
 
 // export for unit testing in the future
 // doc: https://www.youtube.com/watch?v=cchqeWY0Nak&t=1581s
 
 export function Body() {
-  const { home, randomQuoteMachine, markdownPreviewer, drumMachine, notFound } =
-    NAVIGATION_EXTENDS;
+  const {
+    home,
+    randomQuoteMachine,
+    markdownPreviewer,
+    drumMachine,
+    notFound,
+    javaScriptCalculator,
+  } = NAVIGATION_EXTENDS;
 
   return (
     <Routes>
@@ -33,6 +40,11 @@ export function Body() {
         key={drumMachine.name}
         path={drumMachine.path}
         element={<DrumMachinePage />}
+      />
+      <Route
+        key={javaScriptCalculator.name}
+        path={javaScriptCalculator.path}
+        element={<JavaScriptCalculatorPage />}
       />
 
       <Route

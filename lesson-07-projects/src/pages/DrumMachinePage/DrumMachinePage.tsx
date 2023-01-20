@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { DrumPad } from '../components/DrumPad';
-import { Card } from '../components';
+import { DrumPad } from './DrumPad';
+import { Card } from '../../components';
 
 interface AudioClip {
   id: string;

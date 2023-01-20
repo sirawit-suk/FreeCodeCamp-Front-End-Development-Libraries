@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { MarkdownPreviewer, Editor, WindowFrame } from '../components';
-import { MarkdownStatus } from '../constants';
+import { MarkdownPreviewer, Editor, WindowFrame } from '../../components';
+import { MarkdownStatus } from '../../constants';
 
 /** FreeCodeCamp: Frontend Project 2 */
 export function MarkdownPreviewerPage() {

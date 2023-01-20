@@ -13,6 +13,10 @@ export const NAVIGATIONS: Navigations = {
     name: 'Drum Machiner',
     path: '/drum-machine',
   },
+  javaScriptCalculator: {
+    name: 'JavaScript Calculator',
+    path: '/javascript-calculator',
+  },
   clock: {
     name: '25 + 5 Clock',
     path: '/25-5-clock',

@@ -1,5 +1,5 @@
 import Markdown from 'marked-react';
-import { MarkdownStatus } from '../constants';
+import { MarkdownStatus } from '../../constants';
 
 type Props = {
   id: string;
