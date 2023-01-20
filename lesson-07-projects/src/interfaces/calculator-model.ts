@@ -1,12 +1,11 @@
 export interface CalculatorDisplay {
   history: string;
   result: string;
-  // TODO : value ?
 }
 
 export interface CalculatorKey {
   id: string;
-  value: string | number;
+  value: string;
   className: string;
   order: number;
 }

@@ -5,6 +5,7 @@ import { CALCULATOR_KEYS } from '../../constants';
 
 /** FreeCodeCamp: Frontend Project 4 */
 export function JavaScriptCalculatorPage() {
+  // NOTE: Immediate Execution calculator and formula calculator (like iphone Calculator)
   const [calculatorDisplay, setCalculatorDisplay] = useState<CalculatorDisplay>(
     {
       history: '',
@@ -12,7 +13,7 @@ export function JavaScriptCalculatorPage() {
     }
   );
 
-  const { history: display, result } = calculatorDisplay;
+  const { history, result } = calculatorDisplay;
 
   const calculatorKeys = Object.keys(CALCULATOR_KEYS)
     .map((key) => CALCULATOR_KEYS[key])
@@ -22,11 +23,11 @@ export function JavaScriptCalculatorPage() {
     <div className="flex flex-col justify-center items-center w-full min-h-screen">
       <div className="bg-gray-900 p-4">
         <div className="pb-4">
-          <div id="display" className="text-right bg-white h-8">
-            {display}
+          <div id="history" className="text-right bg-white h-8">
+            {history}
           </div>
-          <div id="result" className="text-right bg-gray-200 h-8">
-            {result}
+          <div id="display" className="text-right bg-gray-200 h-8">
+            {result || '0'}
           </div>
         </div>
 
