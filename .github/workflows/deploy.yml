@@ -40,7 +40,7 @@ jobs:
           working-directory: ./lesson-07-projects
 
       - name: Build project
-        run: cd lesson-07-projects npm run build
+        run: cd "lesson-07-projects" npm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
