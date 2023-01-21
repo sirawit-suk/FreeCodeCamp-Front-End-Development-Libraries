@@ -34,13 +34,24 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-        with:
-          working-directory: ./lesson-07-projects
+      # - name: Install dependencies
+      #   uses: bahmutov/npm-install@v1
+      #   with:
+      #     working-directory: ./lesson-07-projects
 
-      - name: Build project
-        run: cd "lesson-07-projects" npm run build
+      # - name: Build project
+      #   run: cd "lesson-07-projects" npm run build
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+        # env:
+        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # if needed
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
