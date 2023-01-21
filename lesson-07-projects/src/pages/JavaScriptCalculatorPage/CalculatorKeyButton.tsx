@@ -14,6 +14,8 @@ export function CalculatorKeyButton({
   setCalulatorDisplay,
   className = '',
 }: Props) {
+  const MAXIMUM = 20;
+
   const onClick = () => {
     setCalulatorDisplay(({ history, result }: CalculatorDisplay) => {
       const defaultCase = { history, result };
@@ -134,6 +136,11 @@ export function CalculatorKeyButton({
 
         // Increment value
         if (regExNumber.test(value) || regExDecimal.test(value)) {
+          // Limit maximum
+          if (result.length >= MAXIMUM) {
+            return defaultCase;
+          }
+
           // No decimal duplication
           if (regExDecimal.test(value) && regExDecimal.test(result)) {
             return defaultCase;
@@ -153,7 +160,7 @@ export function CalculatorKeyButton({
     <Button
       id={id}
       onClick={onClick}
-      className={`p-24 bg-gray-600 ${className}`}
+      className={`p-24 bg-gray-600 hover:bg-orange-500 ${className}`}
     >
       {value || '0'}
     </Button>

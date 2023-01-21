@@ -21,12 +21,20 @@ export function JavaScriptCalculatorPage() {
 
   return (
     <div className="flex flex-col justify-center items-center w-full min-h-screen">
-      <div className="bg-gray-900 p-4">
+      {/* Calculator */}
+      <div className="bg-gray-900 w-72 p-4 rounded">
         <div className="pb-4">
-          <div id="history" className="text-right bg-white h-8">
+          <div
+            id="history"
+            className="text-right w-full p-1 text-orange-400 break-all"
+            style={{ minHeight: '2rem' }}
+          >
             {history}
           </div>
-          <div id="display" className="text-right bg-gray-200 h-8">
+          <div
+            id="display"
+            className="text-right h-8 w-full p-1 text-white text-xl"
+          >
             {result || '0'}
           </div>
         </div>
@@ -42,6 +50,7 @@ export function JavaScriptCalculatorPage() {
           ))}
         </div>
       </div>
+      <div className="my-4">Minimal Calculator v1.0.0</div>
     </div>
   );
 }
