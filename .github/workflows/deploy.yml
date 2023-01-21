@@ -26,8 +26,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          path: ./lesson-07-projects/
+        # with:
+        #   path: ./lesson-07-projects/
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
         with:
-          working-directory: lesson-07-projects
+          working-directory: ./lesson-07-projects
 
       - name: Build project
         run: cd lesson-07-projects npm run build
