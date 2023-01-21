@@ -1,9 +1,12 @@
-import { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure, Menu } from '@headlessui/react';
 import { Link, useLocation } from 'react-router-dom';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-regular-svg-icons';
+import {
+  faCoffee,
+  faCrosshairs,
+  faHamburger,
+} from '@fortawesome/free-solid-svg-icons';
+
 import {
   NAVIGATIONS,
   NAVIGATION_EXTENDS,
@@ -14,7 +17,6 @@ function classNames(...classes: string[]) {
 }
 
 export function NavBar() {
-  const deadLink = 'www.google.com';
   const { pathname: currentPath } = useLocation();
 
   return (
@@ -26,11 +28,10 @@ export function NavBar() {
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <FontAwesomeIcon icon={faCheckSquare} />
+                    <FontAwesomeIcon icon={faCrosshairs} />
                   ) : (
-                    <FontAwesomeIcon icon={faCoffee} />
+                    <FontAwesomeIcon icon={faHamburger} />
                   )}
                 </Disclosure.Button>
               </div>
