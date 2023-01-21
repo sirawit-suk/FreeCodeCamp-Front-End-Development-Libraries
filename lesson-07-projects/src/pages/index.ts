@@ -4,3 +4,4 @@ export * from './NotFoundPage/NotFoundPage';
 export * from './MarkdownPreviewerPage/MarkdownPreviewerPage';
 export * from './DrumMachinePage/DrumMachinePage';
 export * from './JavaScriptCalculatorPage/JavaScriptCalculatorPage';
+export * from './TwentyFivePlusFiveClockPage/TwentyFivePlusFiveClockPage';

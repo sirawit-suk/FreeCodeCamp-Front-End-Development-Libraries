@@ -7,6 +7,7 @@ import {
   MarkdownPreviewerPage,
   NotFoundPage,
   RandomQuoteMachinePage,
+  TwentyFivePlusFiveClockPage,
 } from './pages';
 import { JavaScriptCalculatorPage } from './pages/JavaScriptCalculatorPage/JavaScriptCalculatorPage';
 
@@ -21,6 +22,7 @@ export function Body() {
     drumMachine,
     notFound,
     javaScriptCalculator,
+    twentyFivePlusFiveClock,
   } = NAVIGATION_EXTENDS;
 
   return (
@@ -46,7 +48,11 @@ export function Body() {
         path={javaScriptCalculator.path}
         element={<JavaScriptCalculatorPage />}
       />
-
+      <Route
+        key={twentyFivePlusFiveClock.name}
+        path={twentyFivePlusFiveClock.path}
+        element={<TwentyFivePlusFiveClockPage />}
+      />
       <Route
         key={notFound.name}
         path={notFound.path}

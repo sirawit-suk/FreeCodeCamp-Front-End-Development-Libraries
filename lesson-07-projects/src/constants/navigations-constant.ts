@@ -17,7 +17,7 @@ export const NAVIGATIONS: Navigations = {
     name: 'JavaScript Calculator',
     path: '/javascript-calculator',
   },
-  clock: {
+  twentyFivePlusFiveClock: {
     name: '25 + 5 Clock',
     path: '/25-5-clock',
   },
