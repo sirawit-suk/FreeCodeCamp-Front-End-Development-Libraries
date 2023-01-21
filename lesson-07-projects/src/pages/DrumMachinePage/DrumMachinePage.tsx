@@ -76,7 +76,7 @@ export function DrumMachinePage() {
       className="pt-16 flex flex-col justify-center items-center w-full min-h-screen"
     >
       <Card className="h-full max-w-2xl p-0">
-        <div className="flex flex-row justify-center items-center gap-4 w-full h-full">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full h-full">
           {/* Q, W, E, A, S, D, Z, X, C. */}
           <div className="grid grid-cols-3 gap-4 w-full h-full p-8 bg-slate-100   rounded">
             {audioClips.map(({ id, soundId, soundName, src }) => (
@@ -91,7 +91,7 @@ export function DrumMachinePage() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-4 w-96 bg-white p-8 rounded">
+          <div className="flex flex-col gap-4 md:w-96 bg-white p-8 rounded">
             <h3 className="text-right h-16">
               Drum Machiner <br /> Minimal-series v1.0.0
             </h3>

@@ -51,14 +51,17 @@ export function RandomQuoteMachinePage() {
       id="quote-box"
       className="flex flex-col justify-center items-center w-full min-h-screen "
     >
-      <Card className="p-12">
+      <Card className="p-6 md:p-12">
         <span>
-          <FontAwesomeIcon className="scale-150 mx-4 pb-1" icon={faQuoteLeft} />
-          <span className="text-2xl" id="text">
+          <FontAwesomeIcon
+            className="md:scale-150 mx-4 pb-1"
+            icon={faQuoteLeft}
+          />
+          <span className="text-lg md:text-2xl " id="text">
             {selectedQuote.text}
           </span>
           <FontAwesomeIcon
-            className="scale-150  mx-4 pb-1"
+            className="md:scale-150 mx-4 pb-1"
             icon={faQuoteRight}
           />
         </span>

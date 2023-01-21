@@ -4,7 +4,7 @@ export const CALCULATOR_KEYS: CalculatorKeys = {
   equals: {
     id: 'equals',
     value: '=',
-    className: 'row-span-2  bg-slate-500',
+    className: 'row-span-2 !bg-slate-500',
     order: 15,
   },
   zero: {
@@ -70,25 +70,25 @@ export const CALCULATOR_KEYS: CalculatorKeys = {
   add: {
     id: 'add',
     value: '+',
-    className: 'bg-slate-500',
+    className: '!bg-slate-500',
     order: 11,
   },
   subtract: {
     id: 'subtract',
     value: '-',
-    className: 'bg-slate-500',
+    className: '!bg-slate-500',
     order: 7,
   },
   multiply: {
     id: 'multiply',
     value: '*',
-    className: 'bg-slate-500',
+    className: '!bg-slate-500',
     order: 3,
   },
   divide: {
     id: 'divide',
     value: '/',
-    className: 'bg-slate-500',
+    className: '!bg-slate-500',
     order: 2,
   },
   decimal: {
@@ -100,7 +100,7 @@ export const CALCULATOR_KEYS: CalculatorKeys = {
   clear: {
     id: 'clear',
     value: 'AC',
-    className: 'col-span-2 bg-slate-500',
+    className: 'col-span-2 !bg-slate-500',
     order: 1,
   },
 };

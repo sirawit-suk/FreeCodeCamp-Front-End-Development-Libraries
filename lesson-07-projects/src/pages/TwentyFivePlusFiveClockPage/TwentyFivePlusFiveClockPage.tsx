@@ -119,18 +119,8 @@ export function TwentyFivePlusFiveClockPage() {
 
   return (
     <div className="flex flex-col justify-center items-center gap-4 w-full min-h-screen">
-      <h1 className="text-5xl">25 + 5 Clock</h1>
-      <div className="flex flex-row gap-4">
-        <Panel
-          id="break-label"
-          name="break Length"
-          clock={clock}
-          valueId="break-length"
-          incrementId="break-increment"
-          decrementId="break-decrement"
-          onClickIncrement={() => updateSetttingClock('breakLength', 1)}
-          onClickDecrement={() => updateSetttingClock('breakLength', -1)}
-        />
+      <h1 className="text-3xl md:text-5xl">25 + 5 Clock</h1>
+      <div className="flex flex-col md:flex-row gap-4">
         <Panel
           id="session-label"
           name="Session Length"
@@ -141,29 +131,39 @@ export function TwentyFivePlusFiveClockPage() {
           onClickIncrement={() => updateSetttingClock('sessionLength', 1)}
           onClickDecrement={() => updateSetttingClock('sessionLength', -1)}
         />
+        <Panel
+          id="break-label"
+          name="break Length"
+          clock={clock}
+          valueId="break-length"
+          incrementId="break-increment"
+          decrementId="break-decrement"
+          onClickIncrement={() => updateSetttingClock('breakLength', 1)}
+          onClickDecrement={() => updateSetttingClock('breakLength', -1)}
+        />
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-gray-50 border border-gray-700 rounded-2xl py-6 px-12">
+      <div className="flex flex-col justify-center items-center gap-4 bg-gray-50 border border-gray-700 rounded-2xl py-6 px-12">
         <h2 id="timer-label" className="text-3xl">
           {clock.isSessionMode ? 'Session' : 'Break'}
         </h2>
         <div id="time-left" className="text-6xl">
           {displayTimeFormat(clock.second)}
         </div>
-      </div>
-      <div className="flex flex-row gap-2">
-        <Button
-          id="start_stop"
-          className={clock.isPlay ? 'bg-blue-700' : ''}
-          onClick={() => toggleIsPlay()}
-        >
-          <FontAwesomeIcon icon={faPlay} />
-          <FontAwesomeIcon icon={faPause} />
-        </Button>
-        <Button id="reset" onClick={resetTimeClock}>
-          <FontAwesomeIcon icon={faRotate} />
-        </Button>
-        <audio ref={audioRef} id="beep" src={beepsound} />
+        <div className="flex flex-row gap-2 mt-2">
+          <Button
+            id="start_stop"
+            className={clock.isPlay ? 'bg-blue-700' : ''}
+            onClick={() => toggleIsPlay()}
+          >
+            <FontAwesomeIcon icon={faPlay} />
+            <FontAwesomeIcon icon={faPause} />
+          </Button>
+          <Button id="reset" onClick={resetTimeClock}>
+            <FontAwesomeIcon icon={faRotate} />
+          </Button>
+          <audio ref={audioRef} id="beep" src={beepsound} />
+        </div>
       </div>
     </div>
   );

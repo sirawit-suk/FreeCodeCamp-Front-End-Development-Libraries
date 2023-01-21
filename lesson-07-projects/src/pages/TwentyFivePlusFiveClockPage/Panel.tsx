@@ -34,7 +34,7 @@ export function Panel({
         <Button id={decrementId} onClick={onClickDecrement}>
           <FontAwesomeIcon icon={faArrowDown} />
         </Button>
-        <div id={valueId}>
+        <div className="text-xl" id={valueId}>
           {valueId === 'break-length' ? clock.breakLength : clock.sessionLength}
         </div>
         <Button id={incrementId} onClick={onClickIncrement}>

@@ -160,7 +160,7 @@ export function CalculatorKeyButton({
     <Button
       id={id}
       onClick={onClick}
-      className={`p-24 bg-gray-600 hover:bg-orange-500 ${className}`}
+      className={`p-24 bg-gray-600 hover:!bg-gray-700 ${className}`}
     >
       {value || '0'}
     </Button>

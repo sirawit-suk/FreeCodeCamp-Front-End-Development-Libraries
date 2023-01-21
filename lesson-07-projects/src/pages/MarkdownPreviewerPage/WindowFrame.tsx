@@ -44,7 +44,7 @@ export function WindowFrame({
         </div>
 
         <Button
-          className="bg-gray-700 hover:bg-gray-700 hover:text-gray-300"
+          className="!bg-gray-700 hover:text-gray-300"
           onClick={() => {
             if (status !== statusType) {
               setStatus(statusType);
