@@ -36,6 +36,7 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+          working-directory: lesson-07-projects
 
       - name: Build project
         run: cd lesson-07-projects npm run build
