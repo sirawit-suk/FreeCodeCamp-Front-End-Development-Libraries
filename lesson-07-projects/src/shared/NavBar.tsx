@@ -1,13 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Disclosure, Menu } from '@headlessui/react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  faBars,
-  faCaretUp,
-  faCoffee,
-  faCrosshairs,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCaretUp, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import {
   NAVIGATIONS,
@@ -105,22 +99,22 @@ export function NavBar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {Object.keys(NAVIGATIONS).map((key) => (
-                <Disclosure.Button
-                  key={NAVIGATIONS[key].name}
-                  as="a"
-                  href={NAVIGATIONS[key].path}
-                  className={classNames(
-                    NAVIGATIONS[key].path === currentPath
-                      ? 'bg-gray-900 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={
-                    NAVIGATIONS[key].path === currentPath ? 'page' : undefined
-                  }
-                >
-                  {NAVIGATIONS[key].name}
-                </Disclosure.Button>
+                <Link key={NAVIGATIONS[key].name} to={NAVIGATIONS[key].path}>
+                  <Disclosure.Button
+                    as="a"
+                    className={classNames(
+                      NAVIGATIONS[key].path === currentPath
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      'block px-3 py-2 rounded-md text-base font-medium'
+                    )}
+                    aria-current={
+                      NAVIGATIONS[key].path === currentPath ? 'page' : undefined
+                    }
+                  >
+                    {NAVIGATIONS[key].name}
+                  </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>
