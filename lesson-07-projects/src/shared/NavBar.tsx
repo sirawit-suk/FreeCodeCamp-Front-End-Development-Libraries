@@ -74,6 +74,11 @@ export function NavBar() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
+                <div className="p-2 bg-slate-700 rounded-md text-white text-sm">
+                  {import.meta.env.DEV && 'DEV'}
+                  {import.meta.env.PROD && 'PROD'}
+                </div>
+
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">

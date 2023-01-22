@@ -64,7 +64,7 @@ export function Body() {
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <NavBar />
       <MainContainer>
         <Body />

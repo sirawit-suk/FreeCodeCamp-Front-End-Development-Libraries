@@ -64,7 +64,7 @@ export function TwentyFivePlusFiveClockPage() {
   };
 
   useEffect(() => {
-    let intervalId: number | undefined;
+    let intervalId: NodeJS.Timer | undefined;
     const decrementSecondClock = () => {
       if (clock.second <= 0) {
         // Change mode
