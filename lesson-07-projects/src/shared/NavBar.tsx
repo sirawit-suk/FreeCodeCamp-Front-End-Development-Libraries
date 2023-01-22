@@ -2,9 +2,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Disclosure, Menu } from '@headlessui/react';
 import { Link, useLocation } from 'react-router-dom';
 import {
+  faBars,
+  faCaretUp,
   faCoffee,
   faCrosshairs,
-  faHamburger,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -29,9 +31,9 @@ export function NavBar() {
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   {open ? (
-                    <FontAwesomeIcon icon={faCrosshairs} />
+                    <FontAwesomeIcon icon={faCaretUp} />
                   ) : (
-                    <FontAwesomeIcon icon={faHamburger} />
+                    <FontAwesomeIcon icon={faBars} />
                   )}
                 </Disclosure.Button>
               </div>
