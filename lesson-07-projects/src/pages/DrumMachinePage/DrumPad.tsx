@@ -56,7 +56,7 @@ export function DrumPad({
         setIsPressed(false);
       }}
       id={soundId}
-      className={`drum-pad bg-blue-500 hover:bg-blue-400 text-white font-bold h-16 border-b-4 border-blue-700 hover:border-blue-500 rounded active:border-none ${
+      className={`drum-pad bg-blue-500 hover:bg-blue-400 text-white font-bold border-b-4 border-blue-700 hover:border-blue-500 rounded active:border-none ${
         isPressed ? 'border-none' : ''
       }  ${className}`}
     >
