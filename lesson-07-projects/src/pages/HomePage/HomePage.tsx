@@ -16,7 +16,7 @@ export function HomePage() {
             <Button
               key={key}
               onClick={() => navigate(NAVIGATIONS[key].path)}
-              name={key}
+              name={NAVIGATIONS[key].name}
               className="w-5/6"
             />
           ))}
