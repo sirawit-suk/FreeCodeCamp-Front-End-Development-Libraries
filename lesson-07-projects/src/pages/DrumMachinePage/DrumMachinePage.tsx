@@ -21,13 +21,13 @@ export function DrumMachinePage() {
     {
       id: 'W',
       soundId: 'Heater2',
-      soundName: 'Heater 1',
+      soundName: 'Heater 2',
       src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3',
     },
     {
       id: 'E',
       soundId: 'Heater3',
-      soundName: 'Heater 1',
+      soundName: 'Heater 3',
       src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3',
     },
     {
